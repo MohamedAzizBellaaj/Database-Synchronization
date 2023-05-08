@@ -1,20 +1,21 @@
 from datetime import date
 
 import jsonpickle
-import pika
 from PySide6.QtWidgets import QWidget
 from sqlalchemy.orm import sessionmaker
 
-from bo.bo_database_setup import ProductSales
 from bo.ui.insert_ui import Ui_InsertWidget
+from bo_setup import ProductSales
+from utils.write_json import write_json
 
 
 class InsertWidget(QWidget, Ui_InsertWidget):
-    def __init__(self, db, name):
+    def __init__(self, db, name, logs_path):
         super().__init__()
         self.setupUi(self)
         self.db = db
         self.name = name
+        self.logs_path = logs_path
         self.insert_button.clicked.connect(self.insert_to_db)
 
     def insert_to_db(self):
@@ -44,20 +45,11 @@ class InsertWidget(QWidget, Ui_InsertWidget):
             }
         )
 
-        with pika.BlockingConnection(
-            pika.ConnectionParameters("localhost")
-        ) as connection:
-            channel = connection.channel()
-            channel.queue_declare(queue="ho", durable=True)
-            payload = {
-                "type": "INSERT",
-                "record_data": record_data,
-            }
-            channel.basic_publish(
-                exchange="",
-                routing_key="ho",
-                body=jsonpickle.encode(payload),
-                properties=pika.BasicProperties(delivery_mode=2),
-            )
-
         session.close()
+
+        payload = {
+            "type": "INSERT",
+            "record_data": record_data,
+        }
+
+        write_json(jsonpickle.encode(payload), self.logs_path)

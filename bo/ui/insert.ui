@@ -1,138 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>InsertWidget</class>
- <widget class="QWidget" name="InsertWidget">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>470</width>
-    <height>377</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLabel" name="region_label">
-             <property name="text">
-              <string>Region</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="region_line_edit"/>
-           </item>
-          </layout>
-         </item>
-         <item row="0" column="1">
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QLabel" name="product_label">
-             <property name="text">
-              <string>Product</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="product_line_edit"/>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="qty_label">
-             <property name="text">
-              <string>Qty</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="qty_line_edit"/>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="1">
-          <layout class="QHBoxLayout" name="horizontalLayout_5">
-           <item>
-            <widget class="QLabel" name="cost_label">
-             <property name="text">
-              <string>Cost</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="cost_line_edit"/>
-           </item>
-          </layout>
-         </item>
-         <item row="2" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout_6">
-           <item>
-            <widget class="QLabel" name="amt_label">
-             <property name="text">
-              <string>Amt</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="amt_line_edit"/>
-           </item>
-          </layout>
-         </item>
-         <item row="2" column="1">
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QLabel" name="tax_label">
-             <property name="text">
-              <string>Tax</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="tax_line_edit"/>
-           </item>
-          </layout>
-         </item>
+    <class>InsertWidget</class>
+    <widget class="QWidget" name="InsertWidget">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>470</width>
+                <height>377</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                    <item>
+                        <layout class="QGridLayout" name="gridLayout_2">
+                            <item row="0" column="0">
+                                <layout class="QGridLayout" name="gridLayout">
+                                    <item row="0" column="0">
+                                        <layout class="QHBoxLayout" name="horizontalLayout">
+                                            <item>
+                                                <widget class="QLabel" name="region_label">
+                                                    <property name="text">
+                                                        <string>Region</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="region_line_edit" />
+                                            </item>
+                                        </layout>
+                                    </item>
+                                    <item row="0" column="1">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_4">
+                                            <item>
+                                                <widget class="QLabel" name="product_label">
+                                                    <property name="text">
+                                                        <string>Product</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="product_line_edit" />
+                                            </item>
+                                        </layout>
+                                    </item>
+                                    <item row="1" column="0">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_2">
+                                            <item>
+                                                <widget class="QLabel" name="qty_label">
+                                                    <property name="text">
+                                                        <string>Qty</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="qty_line_edit" />
+                                            </item>
+                                        </layout>
+                                    </item>
+                                    <item row="1" column="1">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_5">
+                                            <item>
+                                                <widget class="QLabel" name="cost_label">
+                                                    <property name="text">
+                                                        <string>Cost</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="cost_line_edit" />
+                                            </item>
+                                        </layout>
+                                    </item>
+                                    <item row="2" column="0">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_6">
+                                            <item>
+                                                <widget class="QLabel" name="amt_label">
+                                                    <property name="text">
+                                                        <string>Amt</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="amt_line_edit" />
+                                            </item>
+                                        </layout>
+                                    </item>
+                                    <item row="2" column="1">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_3">
+                                            <item>
+                                                <widget class="QLabel" name="tax_label">
+                                                    <property name="text">
+                                                        <string>Tax</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="tax_line_edit" />
+                                            </item>
+                                        </layout>
+                                    </item>
+                                </layout>
+                            </item>
+                            <item row="1" column="0">
+                                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                                    <item>
+                                        <widget class="QLabel" name="total_label">
+                                            <property name="text">
+                                                <string>Total</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QLineEdit" name="total_line_edit" />
+                                    </item>
+                                </layout>
+                            </item>
+                        </layout>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="insert_button">
+                            <property name="text">
+                                <string>INSERT</string>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
+            </item>
         </layout>
-       </item>
-       <item row="1" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="total_label">
-           <property name="text">
-            <string>Total</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="total_line_edit"/>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QPushButton" name="insert_button">
-       <property name="text">
-        <string>INSERT</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-  </layout>
- </widget>
- <resources/>
- <connections/>
+    </widget>
+    <resources />
+    <connections />
 </ui>
