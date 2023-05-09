@@ -5,6 +5,7 @@ import pika
 from PySide6.QtWidgets import (
     QHBoxLayout,
     QMainWindow,
+    QMessageBox,
     QPushButton,
     QStackedWidget,
     QVBoxLayout,
@@ -74,19 +75,31 @@ class MainWindow(QMainWindow):
     def sync_db(self):
         with open(self.logs_path, "r") as file:
             logs = json.load(file)
+        try:
+            with pika.BlockingConnection(
+                pika.ConnectionParameters("localhost")
+            ) as connection:
+                channel = connection.channel()
+                channel.queue_declare(queue=self.name, durable=True)
 
-        with pika.BlockingConnection(
-            pika.ConnectionParameters("localhost")
-        ) as connection:
-            channel = connection.channel()
-            channel.queue_declare(queue=self.name, durable=True)
+                channel.basic_publish(
+                    exchange="",
+                    routing_key=self.name,
+                    body=jsonpickle.encode(logs),
+                    properties=pika.BasicProperties(delivery_mode=2),
+                )
+                channel.close()
+                with open(self.logs_path, "w") as file:
+                    json.dump([], file)
+        except Exception:
+            self.show_message_box()
 
-            channel.basic_publish(
-                exchange="",
-                routing_key=self.name,
-                body=jsonpickle.encode(logs),
-                properties=pika.BasicProperties(delivery_mode=2),
-            )
-            channel.close()
-        with open(self.logs_path, "w") as file:
-            json.dump([], file)
+    def show_message_box(self):
+        message_box = QMessageBox(self)
+        message_box.setWindowTitle("Critical Information")
+        message_box.setText(
+            "Failed to send information to the HO server! Please try again later"
+        )
+        message_box.setIcon(QMessageBox.Critical)
+        message_box.setStandardButtons(QMessageBox.Ok)
+        message_box.exec()
