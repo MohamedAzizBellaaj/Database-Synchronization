@@ -24,8 +24,6 @@ for bo in ["bo1", "bo2"]:
     password = "1337"
     host = "localhost"
     port = "3306"
-    with open(f"{bo}/{bo}_db_logs.json", "w") as file:
-        json.dump([], file)
 
     engine = create_engine(f"mysql://{user}:{password}@{host}:{port}/{bo}")
 
